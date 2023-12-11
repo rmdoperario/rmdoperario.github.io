@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #00ddff;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 1280px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 50px;
+      background-color: #242424;
+      height: 50%;
+    }
+
+    footer {
+      background-color: #00ddff;
+      color: white;
+      padding: 15px;
+    }
+    
+    
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 868px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/Operario/index.html">Home</a></li>
+        <li><a href="/Operario/computation.html"><p style="color:#1c1c1c">ACT 1</p></a></li>
+        <li><a href="/Operario/income-tax.html"><p style="color:#1c1c1c">ACT 2</p></a></li>
+        <li><a href="/Operario/nth factorial.html"><p style="color:#1c1c1c">ACT 3</p></a></li>
+        <li><a href="/Operario/payroll.html"><p style="color:#1c1c1c">ACT 4</p></a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="/Operario/computation.html">Simple Computations</a></p>
+      <p><a href="/Operario/income-tax.html">Income Tax Calculator</a></p>
+      <p><a href="/Operario/nth factorial.html">Factorial, Sum and Average</a></p>
+      <p><a href="/Operario/payroll.html">Simple Payroll</a></p>
+    </div>
+
+
+
+  
+    
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3b4044;
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color:  #f59b47;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        footer {
+      background-color: #00f2ff;
+      color: white;
+      padding: 15px;
+    }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="button"] {
+            width: calc(15% - 16px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        label {
+            color: #ecf0f1;
+        }
+
+        p {
+            color: #ecf0f1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Factorial Calculator</h1>
+
+        <label for="nth">Input your number here:</label>
+        <br><br>
+        <input type="text" id="nth" name="nth" autocomplete="off">
+        <br><br>
+        <input type="button" value="Calculate" onclick="factorial()">
+        <br><br>
+        <label for="factor" id="factor">Factorial: </label>
+        <br><br>
+        <label for="sum" id="sum">Sum: </label>
+        <br><br>
+        <label for="mean" id="mean">Average: </label>
+
+        <p id="endli"></p>
+    </div>
+
+    <script>
+        function factorial(){
+            var i, f, r, a, m, n;
+
+            i = 1;
+            f = 1;
+            r = 1;
+            a = 0;
+            m = 0;
+
+            n = document.getElementById("nth").value * 1;
+
+            while (i <= n) {
+                f = f * i;
+                i++;
+            }
+            document.getElementById("factor").innerHTML = 'Factorial: ' + f;
+
+            i = 1;
+
+            do {
+                r = r * i;
+                a = a + r;
+                i++;
+            } while (i <= n);
+            document.getElementById("sum").innerHTML = 'Sum: ' + a;
+
+            m = a / n;
+            document.getElementById("mean").innerHTML = 'Average: ' + m;
+        }
+    </script>
+
+  </div>
+
+</body>
+<footer class="container-fluid text-center">
+  
+</footer>
+</html>
